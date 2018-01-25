@@ -8,3 +8,11 @@ body {
 .MuiToolbar-root-37 {
     justify-content: space-between;
 }
+
+.results{
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none; 
+}
+.results::-webkit-scrollbar { 
+    display: none;
+}

@@ -24,7 +24,7 @@ export default class Map extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    console.log('next props', nextProps);
+    // console.log('next props', nextProps);
     this.renderMap(nextProps);
     return true;
   }
@@ -54,8 +54,10 @@ export default class Map extends Component {
   }
 
   callback(results, status) {
-    console.log('callback results',results);
+    // console.log('callback results',results);
+    // this.props.grabFood(results);
     if (status === google.maps.places.PlacesServiceStatus.OK) {
+      this.props.grabFood(results);
       results.map((location, i) => {
         return this.createMarker(location);
       })
@@ -77,9 +79,8 @@ export default class Map extends Component {
 
 render() {
   const mapStyle = {
-    width: '100%',
-    height: '90vh',
-    marginTop: '10vh',
+    width: '100vw',
+    height: '100vh',
   };
 
   return (
